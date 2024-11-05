@@ -4,11 +4,7 @@ export const menu = [
         href: '/',
     },
     {
-        title: 'Login',
-        href: '/login',
-    },
-    {
-        title: 'Register',
-        href: '/register',
+        title: 'Posts',
+        href: '/posts',
     },
 ];
