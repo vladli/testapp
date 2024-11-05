@@ -7,6 +7,12 @@ export interface User {
     email_verified_at?: string;
 }
 
+export interface Post {
+    id: number;
+    title: string;
+    content: string;
+}
+
 export type PageProps<
     T extends Record<string, unknown> = Record<string, unknown>,
 > = T & {
