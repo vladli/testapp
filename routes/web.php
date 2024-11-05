@@ -1,18 +1,11 @@
 <?php
 
-use App\Http\Controllers\ProfileController;
-use Illuminate\Foundation\Application;
+use App\Http\Controllers\Auth\LoginController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
 Route::get('/', function () {
-    return Inertia::render('Welcome');
+    return Inertia::render('MainPage');
 });
 
-Route::get('/about', function(){
-    return Inertia::render("About/Main", ['name' => 'John']);
-});
-
-
-
-require __DIR__.'/auth.php';
+Route::get('/login', LoginController::class);

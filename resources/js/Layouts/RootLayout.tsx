@@ -1,4 +1,4 @@
-import { Link } from '@inertiajs/react';
+import Header from '@/Components/Layout/Header';
 
 type Props = {
     children: React.ReactNode;
@@ -6,12 +6,10 @@ type Props = {
 export default function RootLayout({ children }: Props) {
     return (
         <div className="flex min-h-dvh flex-col">
-            <header className="h-10">
-                <Link href="/">Home</Link>
-                <Link href="/about">About</Link>
-            </header>
-            <div className="flex-1">{children}</div>
-            <footer className="h-10">Footer</footer>
+            <Header />
+
+            <div className="flex-1 p-2">{children}</div>
+            <footer className="h-10 bg-red-400/40">Footer</footer>
         </div>
     );
 }

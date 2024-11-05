@@ -11,7 +11,7 @@ createInertiaApp({
     title: (title) => `${title} - ${appName}`,
     resolve: (name) => {
         const pages = import.meta.glob('./Pages/**/*.tsx', { eager: true });
-        let page = pages[`./Pages/${name}.tsx`] as {
+        const page = pages[`./Pages/${name}.tsx`] as {
             default: { layout?: (page: JSX.Element) => JSX.Element };
         };
         page.default.layout =
