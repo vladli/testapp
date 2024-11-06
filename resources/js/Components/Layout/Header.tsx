@@ -3,7 +3,7 @@ import { Link } from '@inertiajs/react';
 
 export default function Header() {
     return (
-        <header className="m-4 h-10">
+        <header className="bg-blue-400 p-4">
             <nav className="flex text-lg font-medium">
                 {menu.map((item) => (
                     <Link

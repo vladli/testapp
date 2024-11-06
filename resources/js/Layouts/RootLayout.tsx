@@ -9,7 +9,6 @@ export default function RootLayout({ children }: Props) {
             <Header />
 
             <div className="flex flex-1 flex-col">{children}</div>
-            <footer className="h-10 bg-red-400/40">Footer</footer>
         </div>
     );
 }

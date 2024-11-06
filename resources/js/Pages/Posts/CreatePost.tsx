@@ -10,20 +10,18 @@ export default function CreatePost() {
         post('/posts');
     }
     return (
-        <div>
-            <form className="flex flex-col gap-2" onSubmit={onSubmit}>
-                <input
-                    placeholder="Title"
-                    value={data.title}
-                    onChange={(e) => setData('title', e.target.value)}
-                />
-                <textarea
-                    placeholder="Text"
-                    value={data.content}
-                    onChange={(e) => setData('content', e.target.value)}
-                />
-                <button className="">Create</button>
-            </form>
-        </div>
+        <form className="flex flex-col gap-2 p-2" onSubmit={onSubmit}>
+            <input
+                placeholder="Title"
+                value={data.title}
+                onChange={(e) => setData('title', e.target.value)}
+            />
+            <textarea
+                placeholder="Text"
+                value={data.content}
+                onChange={(e) => setData('content', e.target.value)}
+            />
+            <button className="rounded-lg bg-green-500 p-2">Create</button>
+        </form>
     );
 }
