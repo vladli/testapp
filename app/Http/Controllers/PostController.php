@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\StorePostRequest;
 use App\Http\Requests\UpdatePostRequest;
 use App\Models\Post;
+use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
@@ -14,7 +14,7 @@ class PostController extends Controller
     public function index()
     {
         //
-        $posts = Post::all();
+        $posts = Post::orderBy('created_at', 'desc')->get();
         return inertia("Posts/MainPage", ['posts' => $posts]);
     }
 
@@ -23,14 +23,21 @@ class PostController extends Controller
      */
     public function create()
     {
+        return inertia(("Posts/CreatePost"));
         //
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(StorePostRequest $request)
+    public function store(Request $request)
     {
+        $fields = $request->validate([
+            'title' => 'required',
+            'content' => 'required',
+        ]);
+        Post::create($fields);
+        return redirect()->route('posts.index');
         //
     }
 
@@ -39,6 +46,7 @@ class PostController extends Controller
      */
     public function show(Post $post)
     {
+        return inertia("Posts/PostPage", ['post' => $post]);
         //
     }
 
@@ -63,6 +71,7 @@ class PostController extends Controller
      */
     public function destroy(Post $post)
     {
+        $post->delete();
         //
     }
 }
