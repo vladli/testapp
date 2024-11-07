@@ -1,9 +1,11 @@
-import '../css/app.css';
+import { createRoot, hydrateRoot } from 'react-dom/client';
+import { createInertiaApp } from '@inertiajs/react';
+
 import './bootstrap';
 
-import { createInertiaApp } from '@inertiajs/react';
-import { createRoot, hydrateRoot } from 'react-dom/client';
 import RootLayout from './Layouts/RootLayout';
+
+import '../css/app.css';
 
 const appName = import.meta.env.VITE_APP_NAME || 'Laravel';
 
